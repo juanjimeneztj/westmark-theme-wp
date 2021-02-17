@@ -52,6 +52,7 @@ footer p{
 }
 footer .navigation-footer ul,footer .navigation-footer-secondary ul{
     margin: 0!important;
+    padding: 0!important;
     list-style: none!important;
 }
 footer .navigation-footer ul > li,footer .navigation-footer-secondary ul > li{
@@ -70,6 +71,10 @@ footer .navigation-footer-secondary ul > li a, footer p{
 }
 footer .navigation-footer-secondary ul > li a:hover{
     text-decoration: underline;
+}
+
+@media all and (max-width: 1200px){
+
 }
 
 /****************************

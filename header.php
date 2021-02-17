@@ -13,6 +13,7 @@
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
     <link rel="stylesheet" href="<?=get_template_directory_uri()?>/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?=get_template_directory_uri()?>/css/theme.css">
     
     <title><?=bloginfo('name')?></title>
 
@@ -28,9 +29,9 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <nav class="navbar navbar-expand-md navbar-light" role="navigation">
+                <nav class="navbar navbar-expand-md navbar-light px-0" role="navigation">
                     <?php $juanjimeneztj->logo() ?>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-1" aria-controls="navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'juanjimeneztj' ); ?>">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-1" aria-controls="navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'american_founders' ); ?>">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <?php

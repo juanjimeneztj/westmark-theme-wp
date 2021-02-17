@@ -41,6 +41,8 @@
         </footer>
         
         <script src="<?=get_template_directory_uri()?>/js/bootstrap.min.js"></script>
+        <script src="<?=get_template_directory_uri()?>/js/bootstrap.bundle.min.js"></script>
+
         <?php wp_footer(); ?>
 
         <?php
