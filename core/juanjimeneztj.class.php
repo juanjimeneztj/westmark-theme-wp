@@ -114,12 +114,12 @@ class core_gsweb{
     public static function logo_footer(){
         $logo_footer = get_theme_mod('gsweb_juanjimeneztj_footer_logo');
         if($logo_footer){
-            echo '<div class="logo-footer"><a href="'.get_site_url().'"><img src="'.$logo_footer.'" /></a></div>';
+            echo '<div class="logo-footer"><a href="'.get_site_url().'"><img class="img-fluid" src="'.$logo_footer.'" /></a></div>';
         }else{
             if(get_custom_logo()!=null){
                 echo '<div class="logo-footer">'.get_custom_logo().'</div>';
             }else{
-                echo '<div class="logo-footer"><a href="'.get_site_url().'"><img src="'.get_template_directory_uri().'/images/logo.png" /></a></div>';
+                echo '<div class="logo-footer"><a href="'.get_site_url().'"><img  class="img-fluid" src="'.get_template_directory_uri().'/images/logo.png" /></a></div>';
             }
         }
     }
@@ -129,16 +129,7 @@ class core_gsweb{
         if($company_footer){
             echo $company_footer;
         }else{
-            echo 'SITE_NAME.com';
-        }
-    }
-    
-    public static function footer_disclaimer(){
-        $disclaimer_footer = get_theme_mod('gsweb_juanjimeneztj_footer_disclaimer');
-        if($disclaimer_footer){
-            echo $disclaimer_footer;
-        }else{
-            echo '<p>HIGH RISK WARNING</p><p class="text-justify">Trading foreign exchange, stocks, options, or futures on margin carries a high level of risk, and may not be suitable for all investors. Before deciding to trade, you should carefully consider your objectives, financial situation, needs and level of experience. SITE_NAME provides general advice that does not take into account your objectives, financial situation or needs. The content of this website must not be construed as personal advice. The possibility exists that you could sustain a loss in excess of your deposited funds and therefore, you should not speculate with capital that you cannot afford to lose. You should be aware of all the risks associated with trading on margin.You should seek advice from an independent financial advisor. Past performance is not necessarily indicative of future success.</p><p>101 Marketside Ave. Suite 404 PMB 318 Ponte Vedra, FL 32081  |  (321) 325-1551</p>';
+            echo 'AmericanFounders';
         }
     }
 

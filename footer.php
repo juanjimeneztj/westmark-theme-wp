@@ -1,13 +1,13 @@
 <?php $juanjimeneztj = new core_gsweb(); ?>
 
-        <footer>
+        <footer class="py-5">
             <div class="container">
-                <div class="row">
-                    <div class="col">
+                <div class="row align-items-center justify-items-center">
+                    <div class="col-8 col-sm-8 col-md-3 col-lg-2">
                         <?php $juanjimeneztj->logo_footer() ?>
                     </div>
-                    <div class="col">
-                        <div class="navigation-footer">
+                    <div class="col-12 col-md-9 col-lg-10">
+                        <div class="navigation-footer text-center text-md-end">
                             <?php
                                 wp_nav_menu( array(
                                     'theme_location' => 'footer-menu',
@@ -19,23 +19,22 @@
                 </div>
                 <div class="row">
                     <div class="col">
-                        <p class="text-center">Copyright © <?=date('Y')?> <?php $juanjimeneztj->company_footer() ?>. All Rights Reserved.</p>
+                        <hr class="my-4" />
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col col-sm-4 col-md-3 col-lg-3 col-xl-2">
-                        <?php $juanjimeneztj->logo_footer() ?>
-                        <div class="navigation-footer">
+                <div class="row pb-4">
+                    <div class="col-8 col-sm-8 col-md-3">
+                        <p>© <?php $juanjimeneztj->company_footer() ?> <?=date('Y')?></p>
+                    </div>
+                    <div class="col-12 col-md-9">
+                        <div class="navigation-footer-secondary  text-center text-md-end">
                             <?php
                                 wp_nav_menu( array(
-                                    'theme_location' => 'footer-menu',
-                                    'menu_id' => 'footer-menu',
+                                    'theme_location' => 'footer-menu-secondary',
+                                    'menu_id' => 'footer-menu-secondary',
                                 ));
                             ?>
                         </div>
-                    </div>
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-9 col-xl-10">
-                        <?php $juanjimeneztj->footer_disclaimer() ?>
                     </div>
                 </div>
             </div>

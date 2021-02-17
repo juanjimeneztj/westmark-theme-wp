@@ -19,6 +19,7 @@ function juanjimeneztj_setup() {
     register_nav_menus(array(
         'header-menu' => 'Header Menu',
         'footer-menu' => 'Footer Menu',
+        'footer-menu-secondary' => 'Footer Menu Secondary',
     ));
 
     add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );

@@ -95,22 +95,6 @@ function juanjimeneztj_customize_register($wp_customize){
         )
     );
 
-    $wp_customize->add_setting('gsweb_juanjimeneztj_footer_disclaimer', array(
-        'transport' => 'refresh',
-    ));
-
-    $wp_customize->add_control(
-        new WP_Customize_Control(
-            $wp_customize,
-            'gsweb_juanjimeneztj_footer_disclaimer',
-            array(
-                'label'          => __( 'Disclaimer:', 'chartexperts' ),
-                'section'        => 'gsweb_juanjimeneztj_footer',
-                'type'           => 'textarea'
-            )
-        )
-    );
-
     $wp_customize->add_section('gsweb_juanjimeneztj_top_navbar', array(
         'title' => __('Top Navbar', 'chartexperts'),
         'priority' => 1,

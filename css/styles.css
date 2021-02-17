@@ -41,6 +41,36 @@ header .nav-link:hover,header .nav-link:focus{
 footer {
     background: #F3F4F8;
 }
+footer hr{
+    background: var(--bs-primary);
+    border: none;
+    height: 2px!important;
+    opacity: 1!important;
+}
+footer p{
+    font-size: 13px;
+}
+footer .navigation-footer ul,footer .navigation-footer-secondary ul{
+    margin: 0!important;
+    list-style: none!important;
+}
+footer .navigation-footer ul > li,footer .navigation-footer-secondary ul > li{
+    display: inline-block;
+    margin-left: 15px;
+}
+footer .navigation-footer ul > li a,footer .navigation-footer-secondary ul > li a{
+    font-size: 13px;
+}
+footer .navigation-footer ul > li a{
+    font-weight: 600!important;
+}
+footer .navigation-footer-secondary ul > li a, footer p{
+    color: #6D7783!important;
+    text-decoration: none;
+}
+footer .navigation-footer-secondary ul > li a:hover{
+    text-decoration: underline;
+}
 
 /****************************
     TOP NAVBAR INFORMATION STYLES
