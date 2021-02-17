@@ -21,8 +21,8 @@ header .logo-header {
     margin-top: -5px;
 }
 header .nav-link{
-    color: var(--bs-white)!important;
-    border: 1px solid var(--bs-white);
+    color: var(--white)!important;
+    border: 1px solid var(--white);
     border-radius: 25px;
     font-size: 13px;
     font-weight: 400;
@@ -31,7 +31,7 @@ header .nav-link{
 }
 
 header .nav-link:hover,header .nav-link:focus{
-    background: var(--bs-white);
+    background: var(--white);
     color: var(--bs-dark)!important
 }
 
@@ -42,7 +42,7 @@ footer {
     background: #F3F4F8;
 }
 footer hr{
-    background: var(--bs-primary);
+    background: var(--primary);
     border: none;
     height: 2px!important;
     opacity: 1!important;
@@ -74,7 +74,10 @@ footer .navigation-footer-secondary ul > li a:hover{
 }
 
 @media all and (max-width: 1200px){
-
+    footer .navigation-footer ul > li,footer .navigation-footer-secondary ul > li{
+        display: block;
+        margin: 0 auto 15px;
+    }
 }
 
 /****************************

@@ -7,7 +7,7 @@
                         <?php $juanjimeneztj->logo_footer() ?>
                     </div>
                     <div class="col-12 col-md-9 col-lg-10">
-                        <div class="navigation-footer text-center text-md-end">
+                        <div class="navigation-footer text-center text-md-right">
                             <?php
                                 wp_nav_menu( array(
                                     'theme_location' => 'footer-menu',
@@ -27,7 +27,7 @@
                         <p>© <?php $juanjimeneztj->company_footer() ?> <?=date('Y')?></p>
                     </div>
                     <div class="col-12 col-md-9">
-                        <div class="navigation-footer-secondary  text-center text-md-end">
+                        <div class="navigation-footer-secondary  text-center text-md-right">
                             <?php
                                 wp_nav_menu( array(
                                     'theme_location' => 'footer-menu-secondary',
