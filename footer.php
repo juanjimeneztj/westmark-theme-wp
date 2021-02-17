@@ -2,8 +2,8 @@
 
         <footer class="py-5">
             <div class="container">
-                <div class="row align-items-center justify-items-center">
-                    <div class="col-8 col-sm-8 col-md-3 col-lg-2">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-8 col-sm-8 col-md-3 col-lg-2 text-center text-md-left">
                         <?php $juanjimeneztj->logo_footer() ?>
                     </div>
                     <div class="col-12 col-md-9 col-lg-10">
@@ -22,8 +22,8 @@
                         <hr class="my-4" />
                     </div>
                 </div>
-                <div class="row pb-4">
-                    <div class="col-8 col-sm-8 col-md-3">
+                <div class="row align-items-center justify-content-center pb-4">
+                    <div class="col-8 col-sm-8 col-md-3 text-center text-md-left">
                         <p>© <?php $juanjimeneztj->company_footer() ?> <?=date('Y')?></p>
                     </div>
                     <div class="col-12 col-md-9">

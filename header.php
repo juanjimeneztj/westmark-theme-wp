@@ -31,7 +31,7 @@
             <div class="col">
                 <nav class="navbar navbar-expand-md navbar-light px-0" role="navigation">
                     <?php $juanjimeneztj->logo() ?>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse-1" aria-controls="navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'american_founders' ); ?>">
+                    <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbar-collapse-1" aria-controls="navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'american_founders' ); ?>">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <?php
