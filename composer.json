@@ -1,0 +1,26 @@
+{
+    "name": "juanjgsweb/juanjimenezt-theme",
+    "description": "Theme to SIP company",
+    "version":"1.0.0",
+    "keywords": ["theme", "wordpress", "plugins", "landing pages", "ebooks", "theme"],
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "type":"project",
+    "require": {
+        "twbs/bootstrap": "^4.5",
+        "fortawesome/font-awesome": "^5.15"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Juan Jimenez",
+            "email": "juanjimeneztj@gmail.com",
+            "homepage": "https://juanjimeneztj.com",
+            "role": "Owner"
+        }
+    ],
+    "support": {
+      "email": "info@juanjimeneztj.com",
+      "docs" : "https://juanjimeneztj.com/theme/documentation"
+    }
+}

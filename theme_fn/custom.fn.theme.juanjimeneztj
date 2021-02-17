@@ -1,0 +1,206 @@
+<?php
+// Functions to custom options in the theme
+function juanjimeneztj_customize_register($wp_customize){
+    
+    $wp_customize->add_section('gsweb_juanjimeneztj_stock', array(
+        'title' => __('Tickers Stocks', 'chartexperts'),
+        'priority' => 2,
+        'description' => 'If you want the bar with the stock values ​​to be displayed, you can select to show, even if you want to customize the values ​​to show you can enter the chosen values ​​in the box.
+        
+        <br /> <br />Example:
+        <br />
+        {<br />
+        "proName": "FOREXCOM:SPXUSD",<br />
+        "title": "S&P 500"<br />
+        },<br />
+        {<br />
+        "proName": "FOREXCOM:NSXUSD",<br />
+        "title": "Nasdaq 100"<br />
+        }<br />
+        <br />
+        More info:<br />
+        <a href="https://es.tradingview.com/widget/ticker-tape/" target="_blank">https://es.tradingview.com/widget/ticker-tape/ </a>
+        ',
+    ));
+
+    $wp_customize->add_setting('gsweb_juanjimeneztj_stock_header', array(
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'gsweb_juanjimeneztj_stock_header',
+            array(
+                'label'          => __( 'Display stocks below of the header.', 'chartexperts' ),
+                'section'        => 'gsweb_juanjimeneztj_stock',
+                'type'           => 'checkbox'
+            )
+        )
+    );
+
+    $wp_customize->add_setting('gsweb_juanjimeneztj_stock_header_symbols', array(
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'gsweb_juanjimeneztj_stock_header_symbols',
+            array(
+                'label'          => __( 'Enter here the symbols:', 'chartexperts' ),
+                'section'        => 'gsweb_juanjimeneztj_stock',
+                'type'           => 'textarea'
+            )
+        )
+    );
+
+    $wp_customize->add_section('gsweb_juanjimeneztj_footer', array(
+        'title' => __('Footer Custom', 'chartexperts'),
+        'priority' => 2,
+        'description' => 'In this section you can customize the footer parameters, you can copy the default parameters to be based on them.<br><br>
+        <em><b>If you don&#39;t choose an image for the logo in the footer section, by default the system will use the same site logo.</b></em>
+        ',
+    ));
+
+    $wp_customize->add_setting('gsweb_juanjimeneztj_footer_logo', array(
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control( 
+        new WP_Customize_Image_Control( 
+            $wp_customize, 
+            'gsweb_juanjimeneztj_footer_logo', 
+            array(
+                'label'             => __('Logo Footer:', 'chartexperts'),
+                'section'           => 'gsweb_juanjimeneztj_footer',
+                'settings'          => 'gsweb_juanjimeneztj_footer_logo',
+            )
+        )
+    );
+
+    $wp_customize->add_setting('gsweb_juanjimeneztj_footer_company', array(
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'gsweb_juanjimeneztj_footer_company',
+            array(
+                'label'          => __( 'Company name:', 'chartexperts' ),
+                'section'        => 'gsweb_juanjimeneztj_footer',
+                'type'           => 'text'
+            )
+        )
+    );
+
+    $wp_customize->add_setting('gsweb_juanjimeneztj_footer_disclaimer', array(
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'gsweb_juanjimeneztj_footer_disclaimer',
+            array(
+                'label'          => __( 'Disclaimer:', 'chartexperts' ),
+                'section'        => 'gsweb_juanjimeneztj_footer',
+                'type'           => 'textarea'
+            )
+        )
+    );
+
+    $wp_customize->add_section('gsweb_juanjimeneztj_top_navbar', array(
+        'title' => __('Top Navbar', 'chartexperts'),
+        'priority' => 1,
+        'description' => 'If you want a message to be displayed on the top of the site, you can configure the message and its parameters in this section.',
+    ));
+    
+    $wp_customize->add_setting('gsweb_juanjimeneztj_top_navbar_text_title', array(
+        'transport' => 'refresh',
+    ));
+    
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'gsweb_juanjimeneztj_top_navbar_text_title',
+            array(
+                'label'          => __( 'Information to display on top of the page:', 'chartexperts' ),
+                'section'        => 'gsweb_juanjimeneztj_top_navbar',
+                'type'           => 'text'
+            )
+        )
+    );
+	
+	$wp_customize->add_setting('gsweb_juanjimeneztj_top_navbar_text_btn', array(
+        'transport' => 'refresh',
+    ));
+    
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'gsweb_juanjimeneztj_top_navbar_text_btn',
+            array(
+                'label'          => __( 'Button Text:', 'chartexperts' ),
+                'section'        => 'gsweb_juanjimeneztj_top_navbar',
+                'type'           => 'text'
+            )
+        )
+	);
+	
+	$wp_customize->add_setting('gsweb_juanjimeneztj_top_navbar_text_url', array(
+        'transport' => 'refresh',
+    ));
+    
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'gsweb_juanjimeneztj_top_navbar_text_url',
+            array(
+                'label'          => __( 'Button URL:', 'chartexperts' ),
+                'section'        => 'gsweb_juanjimeneztj_top_navbar',
+                'type'           => 'text'
+            )
+        )
+    );
+	
+	$wp_customize->add_setting('gsweb_juanjimeneztj_top_navbar_text_color', array(
+		'transport' => 'refresh',
+		'default'   => '#ffffff',
+		'sanitize_callback' => 'sanitize_hex_color',
+    ));
+    
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'gsweb_juanjimeneztj_top_navbar_text_color',
+            array(
+                'label'          => __( 'Button Text Color:', 'chartexperts' ),
+                'section'        => 'gsweb_juanjimeneztj_top_navbar',
+				'priority' => 1,
+            )
+        )
+	);
+	
+	$wp_customize->add_setting('gsweb_juanjimeneztj_top_navbar_text_nav_color', array(
+		'transport' => 'refresh',
+		'default'   => '#fa0000',
+		'sanitize_callback' => 'sanitize_hex_color',
+    ));
+    
+    $wp_customize->add_control(
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            'gsweb_juanjimeneztj_top_navbar_text_nav_color',
+            array(
+                'label'          => __( 'Navbar Background Color:', 'chartexperts' ),
+                'section'        => 'gsweb_juanjimeneztj_top_navbar',
+				'priority' => 1,
+            )
+        )
+    );
+    
+}
+
+add_action('customize_register', 'juanjimeneztj_customize_register');

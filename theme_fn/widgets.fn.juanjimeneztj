@@ -1,0 +1,35 @@
+<?php
+// Function to register widgets spaces
+function juanjimeneztj_widgets_init() {
+    register_sidebar( array(
+        'name'          => 'Home Page widgets',
+        'id'            => 'home-page-widget',
+        'before_widget' => '<div class="juanjimeneztj-home-widget">',
+        'after_widget'  => '</div>',
+    ) );
+    register_sidebar( array(
+        'name'          => 'Header widgets',
+        'id'            => 'header-widget',
+        'before_widget' => '<div class="juanjimeneztj-header-widget">',
+        'after_widget'  => '</div>',
+    ) );
+    register_sidebar( array(
+        'name'          => 'Sidebar Tech widgets',
+        'id'            => 'sidebar-tech-widget',
+        'before_widget' => '<div class="juanjimeneztj-sidebar-tech-widget">',
+        'after_widget'  => '</div>',
+    ) );
+    register_sidebar( array(
+        'name'          => 'Sidebar Weekly widgets',
+        'id'            => 'sidebar-weekly-widget',
+        'before_widget' => '<div class="juanjimeneztj-sidebar-weekly-widget">',
+        'after_widget'  => '</div>',
+    ) );
+    register_sidebar( array(
+        'name'          => 'Sidebar Page widgets',
+        'id'            => 'sidebar-page-widget',
+        'before_widget' => '<div class="juanjimeneztj-sidebar-page-widget">',
+        'after_widget'  => '</div>',
+    ) );
+}
+add_action( 'widgets_init', 'juanjimeneztj_widgets_init' );

@@ -1,0 +1,191 @@
+/****************************
+    GOOGLE FONTS
+****************************/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/****************************
+    GENERAL STYLES
+****************************/
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+/****************************
+    HEADER STYLES
+****************************/
+header {
+    background: #000000 url('../images/bg-header2x.png') no-repeat center;
+    background-size: cover;
+}
+header .logo-header {
+    margin-top: -5px;
+}
+header .nav-link{
+    color: var(--bs-white)!important;
+    border: 1px solid var(--bs-white);
+    border-radius: 25px;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0 auto 0 15px;
+    padding: 10px 20px!important;
+}
+
+header .nav-link:hover,header .nav-link:focus{
+    background: var(--bs-white);
+    color: var(--bs-dark)!important
+}
+
+/****************************
+    FOOTER STYLES
+****************************/
+footer {
+    background: #F3F4F8;
+}
+
+/****************************
+    TOP NAVBAR INFORMATION STYLES
+****************************/
+.gsweb-hellobar-rogueinvesting{
+    background: var(--red);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 8888;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+}
+.gsweb-hellobar-rogueinvesting > .close-gsweb-hellorbar-rogueinvesting{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    color: var(--white);
+    z-index: 8889;
+}
+.gsweb-hellobar-rogueinvesting>p{
+    font-size: 16px; line-height: 16px;
+    text-align: center;
+    padding: 15px 0;
+    margin: 0;
+    color: var(--white);
+    font-weight: bold;
+}
+.gsweb-hellobar-rogueinvesting>p>a,.gsweb-hellobar-rogueinvesting>p>a:visited{
+    font-size: 16px; 
+    line-height: 16px;
+    color: var(--white);
+    text-decoration: underline;
+}
+body.gsweb-hellobar-rogueinvesting-active{
+    margin-top: 46px;
+}
+@media all and (max-width: 767px){
+    body.gsweb-hellobar-rogueinvesting-active{
+        margin-top: 62px;
+    }
+    .gsweb-hellobar-rogueinvesting>p{
+        padding: 15px 30px 15px 15px;
+    }
+    .gsweb-hellobar-rogueinvesting > .close-gsweb-hellorbar-rogueinvesting{
+        top: 15px;
+        right: 12px;
+    }
+}
+
+/****************************
+    CAROUSEL STYLES
+****************************/
+.carousel-inner {
+    height: 380px;
+}
+.carousel-item {
+    position: relative;
+}
+.carousel-item::before {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: var(--carousel-item-bg-color);
+}
+.carousel-item .description-Item{
+    position: absolute;
+    padding: 0 60px;
+    top: 35%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: 1;
+}
+.carousel-item h1{
+    color: var(--carousel-title-color);
+}
+.carousel-item p{
+    color: var(--carousel-description-color);
+}
+.carousel-item p.post-details{
+    font-size: 14px!important;
+    text-transform: capitalize;
+}
+.carousel-item p.label-gsweb{
+    background: var(--secondary);
+    display: inline-block;
+    font-size: 20px!important;
+    font-weight: bold;
+    line-height: 20px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+}
+.carousel-item p.post-btn{
+    position: absolute;
+    text-align: right!important;
+    right: 100px;
+    bottom: -80px;
+    z-index: 2;
+}
+
+@media all and (max-width: 767px){
+    .carousel-item{
+        text-align: center;
+    }
+    .carousel-item h1{
+        font-size: 20px;
+        text-align: center;
+    }
+    .carousel-item p{
+        display: none;
+    }
+    .carousel-item p.post-details,.carousel-item p.post-btn{
+        display: block;
+        text-align: center;
+    }
+    .carousel-inner {
+        height: 205px;
+    }
+    .carousel-item .description-Item{
+        position: absolute;
+        padding: 0 30px;
+        top: 15px;
+        left: 0;
+        width: 100%;
+        transform: translate(0);
+        z-index: 1;
+    }
+    .carousel-item p.post-btn{
+        position: relative;
+        text-align: center!important;
+        right: auto;
+        bottom: auto;
+    }
+    .carousel-item p.post-btn a{
+        font-size: 10px;
+    }
+    .carousel-item p.label-gsweb{
+        font-size: 10px!important;
+        line-height: 10px;
+        padding: 5px 15px;
+    }
+}
