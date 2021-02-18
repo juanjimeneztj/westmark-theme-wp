@@ -400,6 +400,8 @@ class core_gsweb{
     }
 
     public function recent_posts_home($params=null){
+        $template = isset($params['template']) ? $params['template']:null;
+        $offset = isset($params['offset']) ? $params['offset']: 0;
         $categoriesArray = (isset($params['categories'])?$params['categories']:false);
         $posts_per_page = (isset($params['posts_per_page'])?$params['posts_per_page']:8);
         $categories = '';
@@ -416,39 +418,29 @@ class core_gsweb{
             'posts_per_page'         => $posts_per_page,
             'order'                  => 'DESC',
             'category_name'          => $categories,
-            'post__not_in'           => get_option('sticky_posts')
+            'post__not_in'           => get_option('sticky_posts'),
+            'offset'                 => $offset,
         );
             
         $all_query = new WP_Query( $args );
 
+        set_query_var( "all_query", $all_query); 
+
         if ($all_query->have_posts()) :
-            while ($all_query->have_posts()) : $all_query->the_post();
-                    $img_url = (get_the_post_thumbnail_url()!=null)?get_the_post_thumbnail_url() : get_template_directory_uri().'/images/image0001.png';
-                    printf('<article id="post-%5$s" class="my-4">
-                                <div class="container-fluid px-0">
-                                    <div class="row mx-0 align-items-center justify-content-center">
-                                        <div class="col-12 col-sm-6 px-0 pr-sm-3 pr-lg-5 mb-3 mb-sm-0">
-                                            <a href="%1$s">
-                                                <img src="%2$s" alt="%3$s" class="img-fluid">
-                                            </a>
-                                        </div>
-                                        <div class="col-12 col-sm-6">
-                                            <h3 class="font-weight-light"><a href="%1$s">%3$s</a></h3>
-
-                                            <p>%4$s</p>
-
-                                            <a href="%1$s" class="btn btn-primary text-uppercase">Read More</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>',
-                            get_the_permalink(),
-                            $img_url,
-                            get_the_title(),
-                            get_the_excerpt(),
-                            get_the_ID(),
-                    );
-            endwhile;
+            switch($template){
+                case null:
+                    get_template_part( 'template_parts/template/template-post', '0001' );
+                    break;
+                case 'template-post-0001':
+                    get_template_part( 'template_parts/template/template-post', '0001' );
+                    break;
+                case 'template-post-0002':
+                    get_template_part( 'template_parts/template/template-post', '0002' );
+                    break;
+                default:
+                    get_template_part( 'template_parts/template/template-post', '0001' );
+                    break;
+            }
         endif;
         wp_reset_postdata();
     }

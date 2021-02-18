@@ -76,8 +76,16 @@ $juanjimeneztj = new core_gsweb();
             <div class="col">
                 <?php $juanjimeneztj->recent_posts_home([
                     'posts_per_page' => 1,
+                    'template'       => 'template-post-0001',
                 ]); ?>
             </div>
+        </div>
+        <div class="row">
+            <?php $juanjimeneztj->recent_posts_home([
+                'posts_per_page' => 3,
+                'template'       => 'template-post-0002',
+                'offset'         => 1,
+            ]); ?>
         </div>
     </div>
 </section>
