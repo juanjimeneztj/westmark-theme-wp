@@ -106,6 +106,16 @@ footer .navigation-footer-secondary ul > li a:hover{
 }
 
 /****************************
+    SECTION Vlog HOME STYLES
+****************************/
+#vlog-home h6{
+    color: var(--gray);
+}
+#vlog-home a:hover{
+    text-decoration: none!important;
+}
+
+/****************************
     SECTION BLOG HOME STYLES
 ****************************/
 #blog-home h5{

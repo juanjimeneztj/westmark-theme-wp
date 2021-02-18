@@ -104,6 +104,84 @@ $juanjimeneztj = new core_gsweb();
     </div>
 </section>
 
+<section id="vlog-home" class="my-5">
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-12 col-md-9 col-lg-7">
+                <h1 class="text-center text-primary mb-4"><strong>Vlog</strong></h1>
+                <h6 class="text-center font-weight-light mb-5">If the path is beautiful, let us not ask where it leads. my religion is very simple. my religion is kindness. each of us has within our power the ability.</h6>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-10 px-1 pl-md-0">
+                <div class="box">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12 col-md-6 col-lg-4 text-center">
+                                <article class="mb-5">
+                                    <a href="#">
+                                        <figure><img src="<?=get_template_directory_uri()?>/images/image00012x.png" alt="" class="img-fluid"></figure>
+                                        <h4 class="text-primary my-2">Video name</h4>
+                                        <button class="btn btn-secondary btn-sm text-uppercase rounded-pill px-5 py-2">Watch Now</button>
+                                    </a>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 text-center">
+                                <article class="mb-5">
+                                    <a href="#">
+                                        <figure><img src="<?=get_template_directory_uri()?>/images/image00012x.png" alt="" class="img-fluid"></figure>
+                                        <h4 class="text-primary my-2">Video name</h4>
+                                        <button class="btn btn-secondary btn-sm text-uppercase rounded-pill px-5 py-2">Watch Now</button>
+                                    </a>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 text-center">
+                                <article class="mb-5">
+                                    <a href="#">
+                                        <figure><img src="<?=get_template_directory_uri()?>/images/image00012x.png" alt="" class="img-fluid"></figure>
+                                        <h4 class="text-primary my-2">Video name</h4>
+                                        <button class="btn btn-secondary btn-sm text-uppercase rounded-pill px-5 py-2">Watch Now</button>
+                                    </a>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 text-center">
+                                <article class="mb-5">
+                                    <a href="#">
+                                        <figure><img src="<?=get_template_directory_uri()?>/images/image00012x.png" alt="" class="img-fluid"></figure>
+                                        <h4 class="text-primary my-2">Video name</h4>
+                                        <button class="btn btn-secondary btn-sm text-uppercase rounded-pill px-5 py-2">Watch Now</button>
+                                    </a>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 text-center">
+                                <article class="mb-5">
+                                    <a href="#">
+                                        <figure><img src="<?=get_template_directory_uri()?>/images/image00012x.png" alt="" class="img-fluid"></figure>
+                                        <h4 class="text-primary my-2">Video name</h4>
+                                        <button class="btn btn-secondary btn-sm text-uppercase rounded-pill px-5 py-2">Watch Now</button>
+                                    </a>
+                                </article>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-4 text-center">
+                                <article class="mb-5">
+                                    <a href="#">
+                                        <figure><img src="<?=get_template_directory_uri()?>/images/image00012x.png" alt="" class="img-fluid"></figure>
+                                        <h4 class="my-2">Video name</h4>
+                                        <button class="btn btn-secondary btn-sm text-uppercase rounded-pill px-5 py-2">Watch Now</button>
+                                    </a>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-2 bg-info py-5 d-flex align-items-center justify-content-center">
+                <h3 class="text-primary"><strong>Ad here</strong></h3>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="podcast-home" class="my-5">
     <div class="container">
         <div class="row">
