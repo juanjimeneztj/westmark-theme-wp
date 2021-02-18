@@ -11,6 +11,6 @@ while ($all_query->have_posts()) : $all_query->the_post();
                 get_the_ID(),
                 get_the_permalink(),
                 get_the_title(),
-                get_the_excerpt(),
+                substr(get_the_excerpt(),0,240).'[...]',
         );
 endwhile;
