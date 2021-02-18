@@ -9,7 +9,10 @@
 * {
     font-family: 'Poppins', sans-serif;
 }
-
+article img{
+    height: auto!important;
+    max-width: 100%!important;
+}
 .btn {
     letter-spacing: 3px!important;
     font-size: 13px!important;
