@@ -53,7 +53,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <h1 class="text-white text-center py-5 mb-5 fw-light">Lorem ipsum dolor sit</h1>
+                <h1 class="text-white text-center py-5 mb-5 font-weight-light">Lorem ipsum dolor sit</h1>
             </div>
         </div>
     </div>

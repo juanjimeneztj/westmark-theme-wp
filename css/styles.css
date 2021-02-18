@@ -81,6 +81,29 @@ footer .navigation-footer-secondary ul > li a:hover{
 }
 
 /****************************
+    SECTION WIDGETS HOME STYLES
+****************************/
+#widgets-home{
+    margin-top: -50px;
+}
+
+#widgets-home .gsweb-item-icon{
+    color: var(--white);
+    font-size: 22px!important;
+}
+
+#widgets-home p{
+    font-size: 13px;
+}
+
+/****************************
+    SECTION BLOG HOME STYLES
+****************************/
+#blog-home h5{
+    font-weight: 900!important;
+}
+
+/****************************
     TOP NAVBAR INFORMATION STYLES
 ****************************/
 .gsweb-hellobar-rogueinvesting{

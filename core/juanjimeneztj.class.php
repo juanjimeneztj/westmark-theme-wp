@@ -416,33 +416,37 @@ class core_gsweb{
             'posts_per_page'         => $posts_per_page,
             'order'                  => 'DESC',
             'category_name'          => $categories,
+            'post__not_in'           => get_option('sticky_posts')
         );
             
         $all_query = new WP_Query( $args );
 
         if ($all_query->have_posts()) :
             while ($all_query->have_posts()) : $all_query->the_post();
-                printf('<article id="post-%1$s" %2$s>
-                            <div class="row">
-                                <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-lx-4">
-                                    <a href="%3$s">
-                                        <img src="%4$s" class="img-fluid" alt="Responsive image">
-                                    </a>
-                                </div>
-                                <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-lx-8">
-                                    <h3 class="oswald text-uppercase"><a class="oswald text-uppercase" href="%3$s">%5$s</a></h3>
-                                    <div class="entry-content">
-                                        %6$s
+                    $img_url = (get_the_post_thumbnail_url()!=null)?get_the_post_thumbnail_url() : get_template_directory_uri().'/images/image0001.png';
+                    printf('<article id="post-%5$s" class="my-4">
+                                <div class="container-fluid px-0">
+                                    <div class="row mx-0 align-items-center justify-content-center">
+                                        <div class="col-12 col-sm-6 px-0 pr-sm-3 pr-lg-5 mb-3 mb-sm-0">
+                                            <a href="%1$s">
+                                                <img src="%2$s" alt="%3$s" class="img-fluid">
+                                            </a>
+                                        </div>
+                                        <div class="col-12 col-sm-6">
+                                            <h3 class="font-weight-light"><a href="%1$s">%3$s</a></h3>
+
+                                            <p>%4$s</p>
+
+                                            <a href="%1$s" class="btn btn-primary text-uppercase">Read More</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </article>',
-                        get_the_ID(),
-                        get_post_class(),
-                        get_the_permalink(),
-                        get_the_post_thumbnail_url(),
-                        get_the_title(),
-                        get_the_excerpt()
+                            </article>',
+                            get_the_permalink(),
+                            $img_url,
+                            get_the_title(),
+                            get_the_excerpt(),
+                            get_the_ID(),
                     );
             endwhile;
         endif;
