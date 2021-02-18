@@ -437,6 +437,12 @@ class core_gsweb{
                 case 'template-post-0002':
                     get_template_part( 'template_parts/template/template-post', '0002' );
                     break;
+                case 'template-post-0003':
+                    get_template_part( 'template_parts/template/template-post', '0003' );
+                    break;
+                case 'template-post-0004':
+                    get_template_part( 'template_parts/template/template-post', '0004' );
+                    break;
                 default:
                     get_template_part( 'template_parts/template/template-post', '0001' );
                     break;

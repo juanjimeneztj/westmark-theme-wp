@@ -104,6 +104,32 @@ footer .navigation-footer-secondary ul > li a:hover{
 }
 
 /****************************
+    SECTION PODCASTS HOME STYLES
+****************************/
+#podcast-home h5{
+    font-weight: 900!important;
+}
+
+/****************************
+    SECTION BLOCK 0001 STYLES
+****************************/
+#block-0001 a{
+    background: #FFFFFF url(../images/banner2x.png) no-repeat center right;
+    background-size: contain;
+    display: block;
+}
+#block-0001 a:hover{
+    outline: none!important;
+    text-decoration: none!important;
+}
+
+@media all and (max-width: 991px){
+    #block-0001 a{
+        background-size: cover;
+    }
+}
+
+/****************************
     TOP NAVBAR INFORMATION STYLES
 ****************************/
 .gsweb-hellobar-rogueinvesting{

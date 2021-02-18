@@ -90,5 +90,44 @@ $juanjimeneztj = new core_gsweb();
     </div>
 </section>
 
+<section id="block-0001">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <a href="#" class="d-flex align-items-center justify-content-center flex-column py-5 px-4 px-md-0">
+                    <h1 class="font-weight-bold text-primary">Your ad here</h1>
+                    <p><small class="text-primary">Lorem ipsum dolor sit amet consectetur adipisicing elit.</small></p>
+                    <button class="btn btn-secondary btn-sm text-uppercase rounded-pill px-5 py-2">Get Started</button>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="podcast-home" class="my-5">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h5 class="text-primary">Podcasts</h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <?php $juanjimeneztj->recent_posts_home([
+                    'posts_per_page' => 1,
+                    'template'       => 'template-post-0003',
+                ]); ?>
+            </div>
+        </div>
+        <div class="row">
+            <?php $juanjimeneztj->recent_posts_home([
+                'posts_per_page' => 3,
+                'template'       => 'template-post-0004',
+                'offset'         => 1,
+            ]); ?>
+        </div>
+    </div>
+</section>
+
 
 <?php get_footer();

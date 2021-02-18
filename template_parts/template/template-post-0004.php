@@ -5,7 +5,7 @@ while ($all_query->have_posts()) : $all_query->the_post();
                     <article id="post-%1$s" class="my-3 px-3 px-md-0">
                         <h4 class="font-weight-light text-primary"><a href="%2$s">%3$s</a></h4>
                         <p><small>%4$s</small></p>
-                        <a href="%2$s" class="text-uppercase">Read More <i class="ml-1 fas fa-arrow-right"></i></a>
+                        <a href="%2$s" class="text-uppercase">Listen Now <i class="ml-1 fas fa-arrow-right"></i></a>
                     </article>
                 </div>',
                 get_the_ID(),
