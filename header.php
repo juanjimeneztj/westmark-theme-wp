@@ -24,7 +24,6 @@
 <?php
     $juanjimeneztj->top_navbar();
 ?>
-
 <header class="py-3">
     <div class="container">
         <div class="row">
@@ -53,7 +52,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <h1 class="text-white text-center py-5 mb-5 font-weight-light">Lorem ipsum dolor sit</h1>
+                <h1 class="text-white text-center py-5 mb-5 font-weight-light"><?=(get_the_title()!='Template: Sticky')?the_title():'Lorem ipsum dolor sit'?></h1>
             </div>
         </div>
     </div>
