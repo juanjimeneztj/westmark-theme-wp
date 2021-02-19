@@ -167,6 +167,26 @@ footer .navigation-footer-secondary ul > li a:hover{
 }
 
 /****************************
+    SECTION SUBSCRIBER 0001 STYLES
+****************************/
+#subscriber-0001 .container{
+    background: var(--primary) url(../images/Map@2x.png) no-repeat center right;
+    background-size: contain;
+    display: block;
+}
+#subscriber-0001 button{
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@media all and (max-width: 991px){
+    #subscriber-0001 .container{
+        background-size: cover;
+    }
+}
+
+/****************************
     TOP NAVBAR INFORMATION STYLES
 ****************************/
 .gsweb-hellobar-rogueinvesting{
