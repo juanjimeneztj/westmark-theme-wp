@@ -138,11 +138,14 @@ $juanjimeneztj = new core_gsweb();
     <div class="container rounded">
         <div class="row align-items-center justify-content-center">
             <div class="col-12 col-md-10 col-lg-10">
-                <form method="post" name="form1" action="" class="text-center py-5">
+                <form method="post" name="form1" action="" class="text-center py-5 needs-validation" novalidate>
                     <h2 class="font-weight-light text-white">Lorem ipsum dolor sit</h2>
                     <p class="text-white text-center">Non perferendis qui nostrum iure hic. Est eaque quidem libero veritatis repellendus non</p>
                     <div class="form-group">
-                        <input type="email" class="form-control form-control-lg w-75 text-center mx-auto" id="inf_email" name="inf_email" placeholder="Email" required />
+                        <input type="email" class="form-control form-control-lg w-75 text-center mx-auto" id="inf_email" name="inf_email" placeholder="Email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Invalid email address" required />
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-secondary btn-sm text-uppercase rounded-pill px-5 py-3 w-50 position-absolute">Sign Up</button>
                 </form>
