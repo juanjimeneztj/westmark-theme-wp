@@ -446,6 +446,9 @@ class core_gsweb{
                 case 'template-post-0005':
                     get_template_part( 'template_parts/template/template-post', '0005' );
                     break;
+                case 'template-post-0006':
+                    get_template_part( 'template_parts/template/template-post', '0006' );
+                    break;
                 default:
                     get_template_part( 'template_parts/template/template-post', '0001' );
                     break;

@@ -52,7 +52,12 @@
         </div>
         <div class="row">
             <div class="col">
-                <h1 class="text-white text-center py-5 mb-5 font-weight-light"><?=(single_post_title('',false)!=null)?single_post_title('',false):'Lorem ipsum dolor sit'?></h1>
+                <?php if(single_post_title('',false)!=null): ?>
+                    <h1 class="text-white text-center pt-5 font-weight-light"><?=single_post_title('',false)?></h1>
+                    <p class="text-center text-white mb-5 pb-5"><small><strong><?=get_the_date()?></strong> by <span class="font-weight-ligth"><?=get_the_author()?></span></small></p>
+                <?php else: ?>
+                    <h1 class="text-white text-center py-5 mb-5 font-weight-light">Welcome</h1>
+                <?php endif; ?>
             </div>
         </div>
     </div>

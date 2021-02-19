@@ -90,6 +90,17 @@ footer .navigation-footer-secondary ul > li a:hover{
 }
 
 /****************************
+    SECTION SINGLE STYLES
+****************************/
+#comments .comment-reply-title, #comments .comments-title{
+    font-weight: bolder!important;
+    color: var(--primary)!important;
+}
+#comments .comment-notes{
+    display: none!important;
+}
+
+/****************************
     SECTION WIDGETS HOME STYLES
 ****************************/
 #widgets-home{
@@ -103,6 +114,34 @@ footer .navigation-footer-secondary ul > li a:hover{
 
 #widgets-home p{
     font-size: 13px;
+}
+
+/****************************
+    SECTION RECENT POST STYLES
+****************************/
+#recent-posts h6{
+    color: var(--gray);
+}
+#recent-posts article a:hover{
+    text-decoration: none!important;
+}
+#recent-posts article a:hover img{
+    transform: scale(1.1) translate(-50%,-50%);
+}
+#recent-posts figure{
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+#recent-posts article figure > img{
+    min-height: 100%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transform-origin: center top;
+    transition: all ease-in-out 0.4s;
 }
 
 /****************************
@@ -145,6 +184,14 @@ footer .navigation-footer-secondary ul > li a:hover{
 ****************************/
 #podcast-home h5{
     font-weight: 900!important;
+}
+/****************************
+    SECTION SINGLE POST STYLES
+****************************/
+.block-title{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 /****************************

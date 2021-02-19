@@ -1,5 +1,7 @@
 <?php
 
+require_once 'comments-helper.php';
+
 // Function setup to activate supports in the theme
 function juanjimeneztj_setup() {
     load_theme_textdomain( "my_theme", TEMPLATEPATH . "/languages");
