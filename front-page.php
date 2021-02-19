@@ -117,66 +117,18 @@ $juanjimeneztj = new core_gsweb();
                 <div class="box">
                     <div class="container-fluid">
                         <div class="row">
-                            <div class="col-12 col-md-6 col-lg-4 text-center">
-                                <article class="mb-5">
-                                    <a href="#">
-                                        <figure><img src="<?=get_template_directory_uri()?>/images/image00012x.png" alt="" class="img-fluid"></figure>
-                                        <h4 class="text-primary my-2">Video name</h4>
-                                        <button class="btn btn-secondary btn-sm text-uppercase rounded-pill px-5 py-2">Watch Now</button>
-                                    </a>
-                                </article>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-4 text-center">
-                                <article class="mb-5">
-                                    <a href="#">
-                                        <figure><img src="<?=get_template_directory_uri()?>/images/image00012x.png" alt="" class="img-fluid"></figure>
-                                        <h4 class="text-primary my-2">Video name</h4>
-                                        <button class="btn btn-secondary btn-sm text-uppercase rounded-pill px-5 py-2">Watch Now</button>
-                                    </a>
-                                </article>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-4 text-center">
-                                <article class="mb-5">
-                                    <a href="#">
-                                        <figure><img src="<?=get_template_directory_uri()?>/images/image00012x.png" alt="" class="img-fluid"></figure>
-                                        <h4 class="text-primary my-2">Video name</h4>
-                                        <button class="btn btn-secondary btn-sm text-uppercase rounded-pill px-5 py-2">Watch Now</button>
-                                    </a>
-                                </article>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-4 text-center">
-                                <article class="mb-5">
-                                    <a href="#">
-                                        <figure><img src="<?=get_template_directory_uri()?>/images/image00012x.png" alt="" class="img-fluid"></figure>
-                                        <h4 class="text-primary my-2">Video name</h4>
-                                        <button class="btn btn-secondary btn-sm text-uppercase rounded-pill px-5 py-2">Watch Now</button>
-                                    </a>
-                                </article>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-4 text-center">
-                                <article class="mb-5">
-                                    <a href="#">
-                                        <figure><img src="<?=get_template_directory_uri()?>/images/image00012x.png" alt="" class="img-fluid"></figure>
-                                        <h4 class="text-primary my-2">Video name</h4>
-                                        <button class="btn btn-secondary btn-sm text-uppercase rounded-pill px-5 py-2">Watch Now</button>
-                                    </a>
-                                </article>
-                            </div>
-                            <div class="col-12 col-md-6 col-lg-4 text-center">
-                                <article class="mb-5">
-                                    <a href="#">
-                                        <figure><img src="<?=get_template_directory_uri()?>/images/image00012x.png" alt="" class="img-fluid"></figure>
-                                        <h4 class="my-2">Video name</h4>
-                                        <button class="btn btn-secondary btn-sm text-uppercase rounded-pill px-5 py-2">Watch Now</button>
-                                    </a>
-                                </article>
-                            </div>
+                            <?php $juanjimeneztj->recent_posts_home([
+                                'posts_per_page' => 6,
+                                'template'       => 'template-post-0005',
+                            ]); ?>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-12 col-lg-2 bg-info py-5 d-flex align-items-center justify-content-center">
-                <h3 class="text-primary"><strong>Ad here</strong></h3>
+            <div class="col-12 col-lg-2">
+                <a href="#">
+                    <img src="<?=get_template_directory_uri()?>/images/block0002.png" alt="" class="img-fluid">
+                </a>
             </div>
         </div>
     </div>

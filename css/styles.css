@@ -111,8 +111,26 @@ footer .navigation-footer-secondary ul > li a:hover{
 #vlog-home h6{
     color: var(--gray);
 }
-#vlog-home a:hover{
+#vlog-home article a:hover{
     text-decoration: none!important;
+}
+#vlog-home article a:hover img{
+    transform: scale(1.1) translate(-50%,-50%);
+}
+#vlog-home figure{
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+#vlog-home article figure > img{
+    min-height: 100%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    transform-origin: center top;
+    transition: all ease-in-out 0.4s;
 }
 
 /****************************
