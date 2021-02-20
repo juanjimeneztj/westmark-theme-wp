@@ -2,6 +2,8 @@
 
 require_once 'comments-helper.php';
 
+remove_action( 'welcome_panel', 'wp_welcome_panel' );
+
 // Function setup to activate supports in the theme
 function juanjimeneztj_setup() {
     load_theme_textdomain( "my_theme", TEMPLATEPATH . "/languages");
@@ -33,6 +35,9 @@ require_once 'core/class/class-wp-bootstrap-navwalker.php';
 
 // Function to register stylesheets and javascripts
 require_once 'theme_fn/scripts.fn.juanjimeneztj';
+
+// Function to register new dashboard
+require_once 'theme_fn/custom.dashboard.theme.juanjimeneztj';
 
 // Function to register widgets spaces
 require_once 'theme_fn/widgets.fn.juanjimeneztj';
