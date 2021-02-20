@@ -6,7 +6,7 @@ function gsweb_better_comments($comment, $args, $depth) {
         <div class="container px-0">
             <div class="row justify-content-center">
                 <div class="col-2 col-lg-1">
-                    <img src="<?=get_avatar_url($comment,$size='52',$default='https://secure.gravatar.com/avatar/c68d860ff9079f73eef8653d413ae796?s=74&d=mm&r=g' );?>" alt="User" class="img-fluid rounded">
+                    <img src="<?=get_template_directory_uri()?>/images/Thumbnail.png" alt="User" class="img-fluid rounded">
                 </div>
                 <div class="col-10 col-lg-11">
                     <div class="comment-block">

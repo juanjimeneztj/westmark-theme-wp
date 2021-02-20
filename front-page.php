@@ -77,6 +77,7 @@ $juanjimeneztj = new core_gsweb();
                 <?php $juanjimeneztj->recent_posts_home([
                     'posts_per_page' => 1,
                     'template'       => 'template-post-0001',
+                    'categories'     => ['blog'],
                 ]); ?>
             </div>
         </div>
@@ -85,6 +86,7 @@ $juanjimeneztj = new core_gsweb();
                 'posts_per_page' => 3,
                 'template'       => 'template-post-0002',
                 'offset'         => 1,
+                'categories'     => ['blog'],
             ]); ?>
         </div>
     </div>
@@ -120,6 +122,7 @@ $juanjimeneztj = new core_gsweb();
                             <?php $juanjimeneztj->recent_posts_home([
                                 'posts_per_page' => 6,
                                 'template'       => 'template-post-0005',
+                                'categories'     => ['vlog'],
                             ]); ?>
                         </div>
                     </div>
@@ -166,6 +169,7 @@ $juanjimeneztj = new core_gsweb();
                 <?php $juanjimeneztj->recent_posts_home([
                     'posts_per_page' => 1,
                     'template'       => 'template-post-0003',
+                    'categories'     => ['podcast'],
                 ]); ?>
             </div>
         </div>
@@ -174,6 +178,7 @@ $juanjimeneztj = new core_gsweb();
                 'posts_per_page' => 3,
                 'template'       => 'template-post-0004',
                 'offset'         => 1,
+                'categories'     => ['podcast'],
             ]); ?>
         </div>
     </div>
