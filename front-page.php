@@ -72,6 +72,13 @@ $juanjimeneztj = new core_gsweb();
                 <h5 class="text-primary">Blog name</h5>
             </div>
         </div>
+        <?php if ( is_active_sidebar( 'home-page-blog-widget' ) ) : ?>
+            <div class="row">
+                <div class="col">
+                    <?php dynamic_sidebar( 'home-page-blog-widget' ); ?>
+                    </div>
+            </div>
+        <?php endif; ?>
         <div class="row">
             <div class="col">
                 <?php $juanjimeneztj->recent_posts_home([
@@ -91,6 +98,18 @@ $juanjimeneztj = new core_gsweb();
         </div>
     </div>
 </section>
+
+<?php if ( is_active_sidebar( 'home-page-block-widget' ) ) : ?>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <?php dynamic_sidebar( 'home-page-block-widget' ); ?>
+                </div>
+            </div>
+        </div>
+    </section>
+<?php endif; ?>
 
 <section id="block-0001">
     <div class="container">
@@ -129,6 +148,9 @@ $juanjimeneztj = new core_gsweb();
                 </div>
             </div>
             <div class="col-12 col-lg-2">
+                <?php if ( is_active_sidebar( 'home-page-vlog-widget' ) ) {
+                    dynamic_sidebar( 'home-page-vlog-widget' );
+                } ?>
                 <a href="#">
                     <img src="<?=get_template_directory_uri()?>/images/block0002.png" alt="" class="img-fluid">
                 </a>
@@ -136,6 +158,18 @@ $juanjimeneztj = new core_gsweb();
         </div>
     </div>
 </section>
+
+<?php if ( is_active_sidebar( 'home-page-home-page-register-widget' ) ) : ?>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <?php dynamic_sidebar( 'home-page-home-page-register-widget' ); ?>
+                </div>
+            </div>
+        </div>
+    </section>
+<?php endif; ?>
 
 <section id="subscriber-0001" class="positio-relative pb-5">
     <div class="container rounded">
@@ -164,6 +198,13 @@ $juanjimeneztj = new core_gsweb();
                 <h5 class="text-primary">Podcasts</h5>
             </div>
         </div>
+        <?php if ( is_active_sidebar( 'home-page-podcast-widget' ) ) : ?>
+            <div class="row">
+                <div class="col">
+                    <?php dynamic_sidebar( 'home-page-podcast-widget' ); ?>
+                    </div>
+            </div>
+        <?php endif; ?>
         <div class="row">
             <div class="col">
                 <?php $juanjimeneztj->recent_posts_home([

@@ -11,6 +11,13 @@ if (have_posts()) :
 
         <main class="single py-5">
             <div class="container">
+                <?php if ( is_active_sidebar( 'single-post-top-widget' ) ) : ?>
+                    <div class="row">
+                        <div class="col">
+                            <?php dynamic_sidebar( 'single-post-top-widget' ); ?>
+                            </div>
+                    </div>
+                <?php endif; ?>
                 <div class="row align-items-center justify-content-center">
                     <div class="col">
                         <article>
@@ -19,6 +26,13 @@ if (have_posts()) :
                         </article>
                     </div>
                 </div><!-- row -->
+                <?php if ( is_active_sidebar( 'single-post-bottom-widget' ) ) : ?>
+                    <div class="row">
+                        <div class="col">
+                            <?php dynamic_sidebar( 'single-post-bottom-widget' ); ?>
+                            </div>
+                    </div>
+                <?php endif; ?>
             </div><!-- container -->
         </main>
 <?php
@@ -107,6 +121,13 @@ wp_reset_postdata();
 
 <section id="recent-posts">
     <div class="container">
+        <?php if ( is_active_sidebar( 'single-post-rp-widget' ) ) : ?>
+            <div class="row">
+                <div class="col">
+                    <?php dynamic_sidebar( 'single-post-rp-widget' ); ?>
+                    </div>
+            </div>
+        <?php endif; ?>
         <div class="row">
             <div class="col">
                 <hr class="bg-info border-0 ml-0" style="height: 2px;width:60px" />
@@ -119,6 +140,13 @@ wp_reset_postdata();
                 'template'       => 'template-post-0006',
             ]); ?>
         </div>
+        <?php if ( is_active_sidebar( 'single-post-after-widget' ) ) : ?>
+            <div class="row">
+                <div class="col">
+                    <?php dynamic_sidebar( 'single-post-after-widget' ); ?>
+                    </div>
+            </div>
+        <?php endif; ?>
     </div>
 </section>
 
