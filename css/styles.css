@@ -399,7 +399,7 @@ body.gsweb-hellobar-rogueinvesting-active{
     height: 200px;
     border-radius: 10px;
     margin: -12px 15px 8px 15px;
-    margin-left: -10px;
+    margin-left: 0;
     width: 100%;
 }
 

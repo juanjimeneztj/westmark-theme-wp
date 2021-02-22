@@ -47,7 +47,6 @@ function wpex_wp_welcome_panel() { ?>
 		<img src="<?=get_site_url()?>/wp-content/themes/american_founders/images/logo.png" alt="">
 		<h1 style="color: #fff;"><?php _e( 'Welcome to American Founders!' ); ?></h1>
 		<p class="about-description" style="color:#fff;margin-top: 20px;margin-bottom: 30px;"><?php _e( 'We hope this dashboard is to your liking and very useful for managing the website, here you will have direct access to different areas where you can customize and generate content in a more practical way.' ); ?></p>
-		<p class="about-description" style="color:#fff;margin-top: 20px;margin-bottom: 30px;"><?php _e( 'Theme created by <a href="https://juanjimeneztj.com/" style="color: #fff;">Juan Jiménez</a>' ); ?></p>
 		<div class="welcome-panel-column-container">
 			<div class="welcome-panel-column">
 				<h4 style="color: #fff;"><?php _e( "Let's Get Started" ); ?></h4>
