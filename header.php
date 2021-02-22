@@ -24,6 +24,13 @@
 <?php
     $juanjimeneztj->top_navbar();
 ?>
+
+<?php
+    if($juanjimeneztj->stock_header_active()){
+        $juanjimeneztj->stock_header();
+    }
+?>
+
 <header class="py-3">
     <div class="container">
         <div class="row">
@@ -62,12 +69,6 @@
         </div>
     </div>
 </header>
-
-<?php
-    if($juanjimeneztj->stock_header_active()){
-        $juanjimeneztj->stock_header();
-    }
-?>
     
 <?php if ( is_active_sidebar( 'header-widget' ) ) : ?>
     <div id="header-widget" class="primary-header widget-area" role="complementary">
