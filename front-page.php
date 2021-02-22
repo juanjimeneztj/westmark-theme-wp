@@ -183,6 +183,9 @@ $juanjimeneztj = new core_gsweb();
                         <div class="valid-feedback">
                             Looks good!
                         </div>
+                        <div class="invalid-feedback">
+                            Please enter a valid email address.
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-secondary btn-sm text-uppercase rounded-pill px-5 py-3 w-50 position-absolute">Sign Up</button>
                 </form>
