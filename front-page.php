@@ -151,9 +151,6 @@ $juanjimeneztj = new core_gsweb();
                 <?php if ( is_active_sidebar( 'home-page-vlog-widget' ) ) {
                     dynamic_sidebar( 'home-page-vlog-widget' );
                 } ?>
-                <a href="#">
-                    <img src="<?=get_template_directory_uri()?>/images/block0002.png" alt="" class="img-fluid">
-                </a>
             </div>
         </div>
     </div>

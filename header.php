@@ -60,8 +60,10 @@
         <div class="row">
             <div class="col">
                 <?php if(single_post_title('',false)!=null): ?>
-                    <h1 class="text-white text-center pt-5 font-weight-light"><?=single_post_title('',false)?></h1>
-                    <p class="text-center text-white mb-5 pb-5"><small><strong><?=get_the_date()?></strong> by <span class="font-weight-ligth"><?=get_the_author()?></span></small></p>
+                    <h1 class="text-white text-center pt-5 <?=(is_page())?'pb-5':''?> font-weight-light"><?=single_post_title('',false)?></h1>
+                    <?php if(!is_page()): ?>
+                        <p class="text-center text-white mb-5 pb-5"><small><strong><?=get_the_date()?></strong> by <span class="font-weight-ligth"><?=get_the_author()?></span></small></p>
+                    <?php endif; ?>
                 <?php else: ?>
                     <h1 class="text-white text-center py-5 mb-5 font-weight-light">Welcome</h1>
                 <?php endif; ?>
