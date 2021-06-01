@@ -5,75 +5,69 @@
 
 <!DOCTYPE html>
 <html <?php language_attributes();?>>
-<head>
-    <meta charset="<?php bloginfo( 'charset' );?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="profile" href="http://gmpg.org/xfn/11">
-    <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+    <head>
+        <meta charset="<?php bloginfo( 'charset' );?>">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
-    <link rel="stylesheet" href="<?=get_template_directory_uri()?>/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?=get_template_directory_uri()?>/css/theme.css">
-    
-    <title><?=bloginfo('name')?></title>
+        <!-- Stylesheets -->
+        <link href="https://juanjimeneztj.github.io/cdn/css/bootstrap/5.0.0/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://juanjimeneztj.github.io/cdn/css/theme/westmark.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+        <link href="<?=get_template_directory_uri()?>/assets/main.css" rel="stylesheet" />
 
-    <?php wp_head() ?>
-</head>
-<body <?php body_class();?>>
+        <!-- Scripts Libraries -->
+        <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
+        <script src="<?=get_template_directory_uri()?>/js/ligthslider.js"></script>
 
-<?php
-    $juanjimeneztj->top_navbar();
-?>
-
-<?php
-    if($juanjimeneztj->stock_header_active()){
-        $juanjimeneztj->stock_header();
-    }
-?>
-
-<header class="py-3">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <nav class="navbar navbar-expand-md navbar-light px-0" role="navigation">
-                    <?php $juanjimeneztj->logo() ?>
-                    <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbar-collapse-1" aria-controls="navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'american_founders' ); ?>">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <?php
-                        wp_nav_menu([
-                            'menu' => 'primary',
-                            'theme_location' => 'header-menu',
-                            'menu_id' => 'header-menu',
-                            'depth' => 2,
-                            'container' => 'div',
-                            'container_class' => 'collapse navbar-collapse justify-content-end',
-                            'container_id' => 'navbar-collapse-1',
-                            'menu_class' => 'nav navbar-nav',
-                            'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-                            'walker' => new wp_bootstrap_navwalker()
-                        ]);
-                    ?>
-                </nav>
+        <title><?=bloginfo('name')?></title>
+        <?php wp_head() ?>
+    </head>
+    <body <?php body_class();?>>
+        <div class="alert bg-primary alert-dismissible fade show rounded-0 gsweb-top-alert py-5 mb-0 wow animate__animated animate__fadeIn" role="alert">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col">
+                        <h3 class="text-white text-center fw-bolder">Lorem ipsum dolor sit amet consectetur adipisicing elit Id doloribus nemo maxime </h3>
+                    </div>
+                </div>
             </div>
+            <button type="button" class="gsweb-btn-close border-0 text-white fs-4 position-absolute" data-bs-dismiss="alert" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
-        <div class="row">
-            <div class="col">
-                <?php if(single_post_title('',false)!=null): ?>
-                    <h1 class="text-white text-center pt-5 <?=(is_page())?'pb-5':''?> font-weight-light"><?=single_post_title('',false)?></h1>
-                    <?php if(!is_page()): ?>
-                        <p class="text-center text-white mb-5 pb-5"><small><strong><?=get_the_date()?></strong> by <span class="font-weight-ligth"><?=get_the_author()?></span></small></p>
-                    <?php endif; ?>
-                <?php else: ?>
-                    <h1 class="text-white text-center py-5 mb-5 font-weight-light">Welcome</h1>
-                <?php endif; ?>
+        <header class="py-2 wow animate__animated animate__fadeIn">
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col">
+                        <a href="index.html">
+                            <img src="<?=get_template_directory_uri()?>/assets/images/logo.png" class="logo" alt="Westmark Trading">
+                        </a>
+                    </div>
+                    <div class="col text-end">
+                        <div id="gsweb-mobile-menu" class="d-inline-block d-lg-none mr-0 fs-3 rounded">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </div>
+                        <nav id="gsweb-desktop-menu" class="d-none d-lg-block">
+                            <button type="button" class="gsweb-menu-close border-0 text-white fs-4 position-absolute">
+                                <i class="fas fa-times"></i>
+                            </button>
+                            <img src="<?=get_template_directory_uri()?>/assets/images/logo.png" class="logo-mobile" alt="Westmark Trading">
+                            <!-- <ul>
+                                <li><a href="news.html">News</a></li>
+                                <li><a href="events.html">Events</a></li>
+                                <li><a href="#">Contact us</a></li>
+                            </ul> -->
+                            <?php
+                                wp_nav_menu([
+                                    'menu' => 'primary',
+                                    'theme_location' => 'header-menu',
+                                    'menu_id' => 'header-menu'                                    
+                                ]);
+                            ?>
+                        </nav>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</header>
-    
-<?php if ( is_active_sidebar( 'header-widget' ) ) : ?>
-    <div id="header-widget" class="primary-header widget-area" role="complementary">
-        <?php dynamic_sidebar( 'header-widget' ); ?>
-    </div>
-<?php endif; ?>
+        </header>

@@ -129,7 +129,7 @@ class core_gsweb{
         if($company_footer){
             echo $company_footer;
         }else{
-            echo 'AmericanFounders';
+            echo 'Westmark';
         }
     }
 

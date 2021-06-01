@@ -30,9 +30,6 @@ function juanjimeneztj_setup() {
 }
 add_action( 'after_setup_theme', 'juanjimeneztj_setup' );
 
-// Function to add styles to natbar
-require_once 'core/class/class-wp-bootstrap-navwalker.php';
-
 // Function to register stylesheets and javascripts
 require_once 'theme_fn/scripts.fn.juanjimeneztj';
 
