@@ -93,7 +93,7 @@ $juanjimeneztj = new core_gsweb();
                     <div class="col-12 col-lg-7 px-0">
                         <img src="<?=get_template_directory_uri()?>/assets/images/iPadProHorizontal@2x.png" alt="" class="img-fluid">
                     </div>
-                    <div class="col-12 col-lg-5 px-0 h-100">
+                    <div class="col-12 col-lg-5 px-0 h-100 overflow-hidden">
                         <div class="box bg-info my-4 p-5 text-center h-75 wow animate__animated animate__slideInLeft" data-wow-delay="1s">
                             <h1 class="fw-bolder text-white">Lorem ipsum dolor sit amet</h1>
                             <form method="POST" action="" name="sipForm" class="pb-5 needs-validation" novalidate>
