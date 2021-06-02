@@ -1,15 +1,9 @@
-<?php
-    require_once 'core/juanjimeneztj.class.php'; 
-    $juanjimeneztj = new core_gsweb();    
-?>
-
 <!DOCTYPE html>
-<html <?php language_attributes();?>>
+<html lang="en">
     <head>
-        <meta charset="<?php bloginfo( 'charset' );?>">
+        <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 
         <!-- Stylesheets -->
         <link href="https://juanjimeneztj.github.io/cdn/css/bootstrap/5.0.0/bootstrap.min.css" rel="stylesheet" />
@@ -19,12 +13,12 @@
 
         <!-- Scripts Libraries -->
         <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
-        <script src="<?=get_template_directory_uri()?>/js/ligthslider.js"></script>
 
-        <title><?=bloginfo('name')?></title>
+        <title>Westmark</title>
+
         <?php wp_head() ?>
     </head>
-    <body <?php body_class();?>>
+    <body>
         <div class="alert bg-primary alert-dismissible fade show rounded-0 gsweb-top-alert py-5 mb-0 wow animate__animated animate__fadeIn" role="alert">
             <div class="container">
                 <div class="row align-items-center justify-content-center">
@@ -54,18 +48,11 @@
                                 <i class="fas fa-times"></i>
                             </button>
                             <img src="<?=get_template_directory_uri()?>/assets/images/logo.png" class="logo-mobile" alt="Westmark Trading">
-                            <!-- <ul>
+                            <ul>
                                 <li><a href="news.html">News</a></li>
                                 <li><a href="events.html">Events</a></li>
                                 <li><a href="#">Contact us</a></li>
-                            </ul> -->
-                            <?php
-                                wp_nav_menu([
-                                    'menu' => 'primary',
-                                    'theme_location' => 'header-menu',
-                                    'menu_id' => 'header-menu'                                    
-                                ]);
-                            ?>
+                            </ul>
                         </nav>
                     </div>
                 </div>

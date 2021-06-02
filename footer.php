@@ -1,5 +1,3 @@
-<?php $juanjimeneztj = new core_gsweb(); ?>
-
 <footer class="pt-5 pb-4">
             <div class="container">
                 <div class="row justify-content-center">
@@ -22,7 +20,8 @@
             </div>
         </footer>
 
-        <?php wp_footer(); ?>
+        <?php wp_footer() ?>
+
         <script src="https://juanjimeneztj.github.io/cdn/js/bootstrap/5.0.0-beta3/bootstrap.min.js" ></script>
         <script src="https://juanjimeneztj.github.io/cdn/js/fontawesome/5.15.3/all.min.js" ></script>
         <script src="https://juanjimeneztj.github.io/cdn/js/validate-default-forms.min.js" ></script>
@@ -38,17 +37,6 @@
                     live:         true        // default
                 }
             ).init();
-
-
-            $document = $(document);
-            $document.ready(function(){
-                let $ele = $('#header-menu');
-                let $code = $ele.parent().html();
-                $ele.parent().attr('id','gsweb-remove');
-                let $parentContainer = $('#gsweb-remove');
-                $ele.parent().parent().append($code);
-                $parentContainer.remove();
-            });
         </script>
     </body>
 </html>
