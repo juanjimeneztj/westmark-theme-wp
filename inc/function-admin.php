@@ -79,9 +79,7 @@ function gsweb_settings_color_secondary(){
 function gsweb_settings_theme(){
     $def_theme = esc_attr( get_option( 'gsweb_theme' ) );
     echo '<select class="form-select" aria-label="Default select example" name="gsweb_theme">
-    <option '.(($def_theme == 'Default')?' selected value="0" ':'').'>Default</option>
-    <option '.(($def_theme == 'Chart Experts')?' selected value="1" ':'').'>Chart Experts</option>
-    <option '.(($def_theme == 'Westmark Trading')?' selected value="2" ':'').'>Westmark Trading</option>
+    <option '.(($def_theme == 'Westmark Trading')?' selected value="0" ':'').'>Westmark Trading</option>
   </select>';
 }
 
@@ -145,7 +143,7 @@ function gsweb_custom_post_types_contributors() {
 		'public'                => true,
 		'show_ui'               => true,
 		'show_in_menu'          => true,
-		'menu_position'         => 1,
+		'menu_position'         => 100,
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
 		'can_export'            => true,
@@ -154,8 +152,10 @@ function gsweb_custom_post_types_contributors() {
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
 		'show_in_rest'          => true,
+		'menu_icon'				=> 'dashicons-money',
+		'register_meta_box_cb'  => 'gsweb_company_experts',
 	);
-	register_post_type( 'post_type', $args );
+	register_post_type( 'contributors_posts', $args );
 }
 // Register Custom Post Type
 function gsweb_custom_post_types_events() {
@@ -200,7 +200,7 @@ function gsweb_custom_post_types_events() {
 		'public'                => true,
 		'show_ui'               => true,
 		'show_in_menu'          => true,
-		'menu_position'         => 0,
+		'menu_position'         => 100,
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,
 		'can_export'            => true,
@@ -209,8 +209,9 @@ function gsweb_custom_post_types_events() {
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
 		'show_in_rest'          => true,
+		'menu_icon' 			=> 'dashicons-embed-video',
 	);
-	register_post_type( 'post_type_events', $args );
+	register_post_type( 'events_posts', $args );
 }
 
 
@@ -252,4 +253,99 @@ function theme_setup(){
  
  
  
+}
+
+// MEta boxes
+
+function gsweb_company_experts() {
+
+    add_meta_box(
+        'gsweb-company-expert',
+        __( 'Company Name:', 'juanjimeneztj.com' ),
+        'gsweb_company_experts_callback',
+        'contributors_posts'
+    );
+}
+
+add_action( 'add_meta_boxes', 'gsweb_company_experts' );
+
+function gsweb_company_experts_callback( $post ) {
+
+    // Add a nonce field so we can check for it later.
+    wp_nonce_field( 'gsweb_company_expert_nonce', 'gsweb_company_expert_nonce' );
+
+    $value = get_post_meta( $post->ID, '_gsweb_company', true );
+
+    echo '<input style="width:100%;padding:15px;border:1px solid #ccc;margin: 15px auto;border-radius:5px;" placeholder="westmark" id="gsweb_company" name="gsweb_company" value="' . esc_attr( $value ) . '">';
+}
+
+function save_gsweb_company_meta_box_data( $post_id ) {
+
+    // Check if our nonce is set.
+    if ( ! isset( $_POST['gsweb_company_expert_nonce'] ) ) {
+        return;
+    }
+
+    // Verify that the nonce is valid.
+    if ( ! wp_verify_nonce( $_POST['gsweb_company_expert_nonce'], 'gsweb_company_expert_nonce' ) ) {
+        return;
+    }
+
+    // If this is an autosave, our form has not been submitted, so we don't want to do anything.
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
+
+    // Check the user's permissions.
+    if ( isset( $_POST['contributors_posts'] ) && 'page' == $_POST['contributors_posts'] ) {
+
+        if ( ! current_user_can( 'edit_page', $post_id ) ) {
+            return;
+        }
+
+    }
+    else {
+
+        if ( ! current_user_can( 'edit_post', $post_id ) ) {
+            return;
+        }
+    }
+
+    /* OK, it's safe for us to save the data now. */
+
+    // Make sure that it is set.
+    if ( ! isset( $_POST['gsweb_company'] ) ) {
+        return;
+    }
+
+    // Sanitize user input.
+    $my_data = sanitize_text_field( $_POST['gsweb_company'] );
+
+    // Update the meta field in the database.
+    update_post_meta( $post_id, '_gsweb_company', $my_data );
+}
+
+add_action( 'save_post', 'save_gsweb_company_meta_box_data' );
+
+function gsweb_company_expert_logo() {
+
+    add_meta_box(
+        'gsweb-company-expert-logo',
+        __( 'Company Logo:', 'juanjimeneztj.com' ),
+        'gsweb_company_experts_logo_callback',
+        'contributors_posts'
+    );
+}
+
+add_action( 'add_meta_boxes', 'gsweb_company_expert_logo' );
+
+function gsweb_company_experts_logo_callback( $post ) {
+
+    // Add a nonce field so we can check for it later.
+    wp_nonce_field( 'gsweb_company_expert_logo_nonce', 'gsweb_company_expert_logo_nonce' );
+
+    $value = get_post_meta( $post->ID, '_gsweb_company_logo', true );
+
+	echo '<input type="button" class="button btn btn-dark" value="Upload the company logo" id="gsweb_company_logo_btn" /><input type="hidden" name="gsweb_company_logo" id="gsweb_company_logo" value="' . $value . '" />';
+	echo '<figure><img src="' . $value . '" id="background-image-topnavbar-preview" class="img-fluid mt-3" /></figure>';
 }
