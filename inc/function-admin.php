@@ -29,14 +29,21 @@ function gsweb_custom_settings(){
     register_setting( 'gsweb-settings-group' , 'gsweb_primary_color' );
     register_setting( 'gsweb-settings-group' , 'gsweb_secondary_color' );
     register_setting( 'gsweb-settings-group' , 'gsweb_theme' );
+    register_setting( 'gsweb-settings-group' , 'gsweb_settings_bgtopnavbar' );
 
     add_settings_section( 'gsweb-settings-options' , 'Theme Settings' , 'gsweb_general_options' , 'gsweb' );
     add_settings_field( 'gsweb-sidebar-primary-color' , 'Primary:' , 'gsweb_settings_color' , 'gsweb' , 'gsweb-settings-options' );
     add_settings_field( 'gsweb-sidebar-secondary-color' , 'Secondary:' , 'gsweb_settings_color_secondary' , 'gsweb' , 'gsweb-settings-options' );
     add_settings_field( 'gsweb-sidebar-theme' , 'Default Theme:' , 'gsweb_settings_theme' , 'gsweb' , 'gsweb-settings-options' );
+    add_settings_field( 'gsweb-sidebar-topnavbar_background' , 'Background of top-navbar:' , 'gsweb_settings_bgtopnavbar_image' , 'gsweb' , 'gsweb-settings-options' );
 }
 
 // main funciton to get field options for gsweb theme
+function gsweb_settings_bgtopnavbar_image(){
+	$picture = esc_attr( get_option( 'gsweb_settings_bgtopnavbar' ) );
+	echo '<input type="button" class="btn btn-dark" value="Upload background Image" id="upload-bg-image-topnavbar" /><input type="hidden" name="gsweb_settings_bgtopnavbar" id="background-image-topnavbar" value="' . $picture . '" />';
+	echo '<img src="' . $picture . '" id="background-image-topnavbar-preview" class="img-fluid mt-3" />';
+}
 // Option to save the primary Color
 function gsweb_settings_color(){
     $promaryColor = esc_attr( get_option( 'gsweb_primary_color' ) );

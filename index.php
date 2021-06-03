@@ -3,7 +3,6 @@ defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
 
 get_header();?>
 
-
         <section id="westmark-experts" class="bg-primary py-5">
             <div class="container">
                 <div class="row align-items-center justify-content-center pt-3">
