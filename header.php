@@ -19,18 +19,20 @@
         <?php wp_head() ?>
     </head>
     <body>
-        <div class="alert bg-primary alert-dismissible fade show rounded-0 gsweb-top-alert py-5 mb-0 wow animate__animated animate__fadeIn" role="alert">
-            <div class="container">
-                <div class="row align-items-center justify-content-center">
-                    <div class="col">
-                        <h3 class="text-white text-center fw-bolder">Lorem ipsum dolor sit amet consectetur adipisicing elit Id doloribus nemo maxime </h3>
+        <?php if(get_option('gsweb_settings_bgtopnavbar_text')): ?>
+            <div class="alert bg-primary alert-dismissible fade show rounded-0 gsweb-top-alert py-5 mb-0 wow animate__animated animate__fadeIn" role="alert" <?=(get_option('gsweb_settings_bgtopnavbar'))?'style="background-image: url('.get_option('gsweb_settings_bgtopnavbar').')"':''?>>
+                <div class="container">
+                    <div class="row align-items-center justify-content-center">
+                        <div class="col">
+                            <h3 class="text-white text-center fw-bolder"><?=get_option('gsweb_settings_bgtopnavbar_text')?> <?=(get_option('gsweb_settings_bgtopnavbar_link_text'))?'<a class="text-white" href="'.((get_option('gsweb_settings_bgtopnavbar_link_url'))?get_option('gsweb_settings_bgtopnavbar_link_url'):'#').'" target="_blank">'.get_option('gsweb_settings_bgtopnavbar_link_text').'</a>':''?></h3>
+                        </div>
                     </div>
                 </div>
+                <button type="button" class="gsweb-btn-close border-0 text-white fs-4 position-absolute" data-bs-dismiss="alert" aria-label="Close">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
-            <button type="button" class="gsweb-btn-close border-0 text-white fs-4 position-absolute" data-bs-dismiss="alert" aria-label="Close">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
+        <?php endif ?>
         <header class="py-2 wow animate__animated animate__fadeIn">
             <div class="container">
                 <div class="row align-items-center justify-content-center">
@@ -38,22 +40,6 @@
                         <a href="index.html">
                             <img src="<?=get_template_directory_uri()?>/assets/images/logo.png" class="logo" alt="Westmark Trading">
                         </a>
-                    </div>
-                    <div class="col text-end">
-                        <div id="gsweb-mobile-menu" class="d-inline-block d-lg-none mr-0 fs-3 rounded">
-                            <i class="fas fa-ellipsis-v"></i>
-                        </div>
-                        <nav id="gsweb-desktop-menu" class="d-none d-lg-block">
-                            <button type="button" class="gsweb-menu-close border-0 text-white fs-4 position-absolute">
-                                <i class="fas fa-times"></i>
-                            </button>
-                            <img src="<?=get_template_directory_uri()?>/assets/images/logo.png" class="logo-mobile" alt="Westmark Trading">
-                            <ul>
-                                <li><a href="news.html">News</a></li>
-                                <li><a href="events.html">Events</a></li>
-                                <li><a href="#">Contact us</a></li>
-                            </ul>
-                        </nav>
                     </div>
                 </div>
             </div>

@@ -1,6 +1,5 @@
 var mediaUploader;
-$(document).ready(function($){
-});
+
 $( '#upload-bg-image-topnavbar' ).on('click',function(e){
     // e.preventDefault();
     if( mediaUploader ){

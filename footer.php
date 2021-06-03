@@ -11,10 +11,21 @@
                     </div>
                     <div class="col-12 col-lg-6 col-xl-3">
                         <h5 class="fw-bolder">Contact us</h5>
-                        <a href="#" class="text-success d-block mb-1"><i class="far fa-envelope"></i> info@westmarkassociates.com</a>
-                        <a href="#" class="text-success d-block mb-1"><i class="fab fa-facebook-square"></i> Facebook</a>
-                        <a href="#" class="text-success d-block mb-1"><i class="fab fa-instagram"></i> Instagram</a>
-                        <a href="#" class="text-success d-block mb-1"><i class="fab fa-youtube"></i> Youtube</a>
+                        <a href="mailto:info@westmarkassociates.com" class="text-success d-block mb-1"><i class="far fa-envelope"></i> info@westmarkassociates.com</a>
+                        <a href="https://www.facebook.com/WestmarkTrading/" target="_blank" class="text-success d-block mb-1"><i class="fab fa-facebook-square"></i> Facebook</a>
+                        <a href="https://www.instagram.com/westmarktrading/" target="_blank" class="text-success d-block mb-1"><i class="fab fa-instagram"></i> Instagram</a>
+                        <a href="https://www.youtube.com/channel/UCDxuyFkh-N_p9Ay6uvOi2Yw" target="_blank" class="text-success d-block mb-1"><i class="fab fa-youtube"></i> Youtube</a>
+                    </div>
+                </div>
+                <div class="row align-items-center justify-content-center">
+                    <div class="col text-center">
+                        <?php
+                            wp_nav_menu([
+                                'menu' => 'primary',
+                                'theme_location' => 'footer-menu',
+                                'menu_id' => 'footer-menu'
+                            ]);
+                        ?>
                     </div>
                 </div>
             </div>

@@ -9,11 +9,11 @@
 
 function gsweb_add_admin_page(){
     // Main option for gsweb theme
-    add_menu_page( 'GSWEB Theme Options' , 'Theme Options' , 'manage_options' , 'gsweb' , 'gsweb_theme_welcome_page' , 'dashicons-google', 110 );
+    add_menu_page( 'GSWEB Theme Options' , 'Theme Options' , 'manage_options' , 'gsweb' , 'gsweb_theme_welcome_page' , get_template_directory_uri() . '/img/favicons.png', 110 ); //dashicons-google
 
     // Sub menu for gsweb theme
     add_submenu_page( 'gsweb' , 'GSWEB welcome' , 'Welcome' , 'manage_options' , 'gsweb' , 'gsweb_theme_welcome_page' );
-    add_submenu_page( 'gsweb' , 'Custom CSS' , 'Settings' , 'manage_options' , 'gsweb_custom_css' , 'gsweb_theme_custom_css_page' );
+    add_submenu_page( 'gsweb' , 'Theme Settings' , 'Settings' , 'manage_options' , 'gsweb_custom_css' , 'gsweb_theme_custom_css_page' );
 
     // Activate custom settings
     add_action( 'admin_init' , 'gsweb_custom_settings' );
@@ -29,20 +29,41 @@ function gsweb_custom_settings(){
     register_setting( 'gsweb-settings-group' , 'gsweb_primary_color' );
     register_setting( 'gsweb-settings-group' , 'gsweb_secondary_color' );
     register_setting( 'gsweb-settings-group' , 'gsweb_theme' );
-    register_setting( 'gsweb-settings-group' , 'gsweb_settings_bgtopnavbar' );
+    register_setting( 'gsweb-settings-group-topbar' , 'gsweb_settings_bgtopnavbar' );
+    register_setting( 'gsweb-settings-group-topbar' , 'gsweb_settings_bgtopnavbar_text' );
+    register_setting( 'gsweb-settings-group-topbar' , 'gsweb_settings_bgtopnavbar_link_text' );
+    register_setting( 'gsweb-settings-group-topbar' , 'gsweb_settings_bgtopnavbar_link_url' );
 
-    add_settings_section( 'gsweb-settings-options' , 'Theme Settings' , 'gsweb_general_options' , 'gsweb' );
+    add_settings_section( 'gsweb-settings-options' , '' , 'gsweb_general_options' , 'gsweb' );
+    add_settings_section( 'gsweb-settings-options-topbar' , '' , 'gsweb_general_options' , 'gswebtopbar' );
+
     add_settings_field( 'gsweb-sidebar-primary-color' , 'Primary:' , 'gsweb_settings_color' , 'gsweb' , 'gsweb-settings-options' );
     add_settings_field( 'gsweb-sidebar-secondary-color' , 'Secondary:' , 'gsweb_settings_color_secondary' , 'gsweb' , 'gsweb-settings-options' );
     add_settings_field( 'gsweb-sidebar-theme' , 'Default Theme:' , 'gsweb_settings_theme' , 'gsweb' , 'gsweb-settings-options' );
-    add_settings_field( 'gsweb-sidebar-topnavbar_background' , 'Background of top-navbar:' , 'gsweb_settings_bgtopnavbar_image' , 'gsweb' , 'gsweb-settings-options' );
+
+    add_settings_field( 'gsweb-sidebar-topnavbar_text' , 'Text of top-navbar:' , 'gsweb_settings_bgtopnavbar_text_value' , 'gswebtopbar' , 'gsweb-settings-options-topbar' );
+    add_settings_field( 'gsweb-sidebar-topnavbar_link_text' , 'Text of the link:' , 'gsweb_settings_bgtopnavbar_link_text_value' , 'gswebtopbar' , 'gsweb-settings-options-topbar' );
+    add_settings_field( 'gsweb-sidebar-topnavbar_link_url' , 'Url of the link:' , 'gsweb_settings_bgtopnavbar_link_url_value' , 'gswebtopbar' , 'gsweb-settings-options-topbar' );
+    add_settings_field( 'gsweb-sidebar-topnavbar_background' , 'Background of top-navbar:' , 'gsweb_settings_bgtopnavbar_image' , 'gswebtopbar' , 'gsweb-settings-options-topbar' );
 }
 
 // main funciton to get field options for gsweb theme
 function gsweb_settings_bgtopnavbar_image(){
 	$picture = esc_attr( get_option( 'gsweb_settings_bgtopnavbar' ) );
 	echo '<input type="button" class="btn btn-dark" value="Upload background Image" id="upload-bg-image-topnavbar" /><input type="hidden" name="gsweb_settings_bgtopnavbar" id="background-image-topnavbar" value="' . $picture . '" />';
-	echo '<img src="' . $picture . '" id="background-image-topnavbar-preview" class="img-fluid mt-3" />';
+	echo '<figure><img src="' . $picture . '" id="background-image-topnavbar-preview" class="img-fluid mt-3" /></figure>';
+}
+function gsweb_settings_bgtopnavbar_text_value(){
+	$text = esc_attr( get_option( 'gsweb_settings_bgtopnavbar_text' ) );
+	echo '<input type="text" name="gsweb_settings_bgtopnavbar_text" class="form-control" style="border: 3px solid #07A6BB!important;"  value="' . $text .'" />';
+}
+function gsweb_settings_bgtopnavbar_link_text_value(){
+	$text = esc_attr( get_option( 'gsweb_settings_bgtopnavbar_link_text' ) );
+	echo '<input type="text" name="gsweb_settings_bgtopnavbar_link_text" class="form-control" style="border: 3px solid #07A6BB!important;"  value="' . $text .'" />';
+}
+function gsweb_settings_bgtopnavbar_link_url_value(){
+	$text = esc_attr( get_option( 'gsweb_settings_bgtopnavbar_link_url' ) );
+	echo '<input type="text" name="gsweb_settings_bgtopnavbar_link_url" class="form-control" style="border: 3px solid #07A6BB!important;"  value="' . $text .'" />';
 }
 // Option to save the primary Color
 function gsweb_settings_color(){
@@ -60,12 +81,13 @@ function gsweb_settings_theme(){
     echo '<select class="form-select" aria-label="Default select example" name="gsweb_theme">
     <option '.(($def_theme == 'Default')?' selected value="0" ':'').'>Default</option>
     <option '.(($def_theme == 'Chart Experts')?' selected value="1" ':'').'>Chart Experts</option>
+    <option '.(($def_theme == 'Westmark Trading')?' selected value="2" ':'').'>Westmark Trading</option>
   </select>';
 }
 
 // sidebar page options for gsweb theme
 function gsweb_general_options(){
-    echo 'General Styles';
+    echo '';
 }
 
 // Main page for gsweb theme
@@ -131,6 +153,7 @@ function gsweb_custom_post_types_contributors() {
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
+		'show_in_rest'          => true,
 	);
 	register_post_type( 'post_type', $args );
 }
@@ -185,6 +208,7 @@ function gsweb_custom_post_types_events() {
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
 		'capability_type'       => 'page',
+		'show_in_rest'          => true,
 	);
 	register_post_type( 'post_type_events', $args );
 }
@@ -208,33 +232,14 @@ function theme_setup(){
     add_theme_support( 'post-thumbnails' );
  
     /** HTML5 support **/
-    add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
+    add_theme_support( 'widgets', 'menus', 'responsive-embeds', 'core-block-patterns', 'wp-block-styles', 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
+
+	register_nav_menus(array(
+        'footer-menu' => 'Footer Menu',
+    ));
  
     /** refresh widgest **/
     add_theme_support( 'customize-selective-refresh-widgets' );
- 
-    /** custom background **/
-    $bg_defaults = array(
-        'default-image'          => '',
-        'default-preset'         => 'default',
-        'default-size'           => 'cover',
-        'default-repeat'         => 'no-repeat',
-        'default-attachment'     => 'scroll',
-    );
-    add_theme_support( 'custom-background', $bg_defaults );
- 
-    /** custom header **/
-    $header_defaults = array(
-        'default-image'          => '',
-        'width'                  => 300,
-        'height'                 => 60,
-        'flex-height'            => true,
-        'flex-width'             => true,
-        'default-text-color'     => '',
-        'header-text'            => true,
-        'uploads'                => true,
-    );
-    add_theme_support( 'custom-header', $header_defaults );
  
     /** custom log **/
     add_theme_support( 'custom-logo', array(

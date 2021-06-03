@@ -9,7 +9,7 @@ get_header();?>
                     <div class="col-12 col-lg-5">
                         <h1 class="text-white fw-bolder mb-3">The experts <br class="d-none d-lg-block" />you can trust</h1>
                         <p class="text-white">At Westmark Trading, we hand-pick our market analysts, trading veterans, and educators to bring you the best the trading and investing world has to offer.</p>
-                        <a href="#" class="btn btn-secondary btn-lg rounded-0 px-5 mt-2" data-wow-delay="1s">Get in touch now</a>
+                        <a href="#RegisterNow" class="btn btn-block btn-lg btn-secondary fw-bold px-5 mt-2" data-wow-delay="1s">Stay in-the-know &gt;&gt;</a>
                     </div>
                     <div class="col-12 col-lg-7">
                         <div class="row">
@@ -85,23 +85,6 @@ get_header();?>
                         </div>
                     </div>
                 </div>
-                <div class="row py-4 px-0 align-items-center justify-content-center">
-                    <div class="col-12 col-lg-7 px-0">
-                        <img src="<?=get_template_directory_uri()?>/assets/images/iPadProHorizontal@2x.png" alt="" class="img-fluid">
-                    </div>
-                    <div class="col-12 col-lg-5 px-0 h-100 overflow-hidden">
-                        <div class="box bg-info my-4 p-5 text-center h-75 wow animate__animated animate__slideInLeft" data-wow-delay="1s">
-                            <h1 class="fw-bolder text-white">Lorem ipsum dolor sit amet</h1>
-                            <form method="POST" action="" name="sipForm" class="pb-5 needs-validation" novalidate>
-                                <div class="my-3">
-                                    <input type="email" name="email" placeholder="* Email" class="form-control form-control-lg text-center" id="email1" required />
-                                    <div class="invalid-feedback"></div>
-                                </div>
-                                <button type="submit" class="btn btn-block btn-lg btn-secondary fw-bold">Get in touch now</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -169,7 +152,7 @@ get_header();?>
                     </div>
                 </div>
             </div>
-            <div class="container gsweb-bg-cover py-5 wow animate__animated animate__zoomIn">
+            <div class="container gsweb-bg-cover py-5 wow animate__animated animate__zoomIn" id="RegisterNow">
                 <div class="row align-items-center justify-content-center">
                     <div class="col text-center text-white py-5">
                         <div class="position-relative w-25 mx-auto">
